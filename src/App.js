@@ -2,9 +2,11 @@ import React from 'react';
 import axios from './API/unsplash';
 import './App.css';
 import SearchBar from './Components/SearchBar';
+import ImageList from './Components/ImageList';
 
 class App extends React.Component{
     state = {images: []};
+   //this is another method to fetch the data from the api using subscription
     /*onSearchSubmit(term) {
         axios.get('search/photos',{
             params: {
@@ -31,6 +33,7 @@ class App extends React.Component{
                     <SearchBar onSubmit={this.onSearchSubmit}/>
                 </div>
                 Found: {this.state.images.length}
+                <ImageList images={this.state.images}/>
             </div>
         );
     }
